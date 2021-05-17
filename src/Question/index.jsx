@@ -3,17 +3,17 @@ import QuestionBody from '../QuestionBody/index';
 import Option from '../Option/index';
 import './style.css';
 
-const Question = ({ text }) => {
-  const [answered, setAnswered] = useState(false);
+const Question = () => {
+  const [answer, setAnswer] = useState('symbolQuestion');
 
-  const handleSelect = () => {
-    return setAnswered(true);
+  const handleSelect = (iconType) => {
+    return setAnswer(iconType);
   };
 
   return (
     <div className="question">
       <QuestionBody
-        iconType={answered === false ? 'symbolQuestion' : 'symbolTick'}
+        iconType={answer}
         text="Kdo jinému jámu kopá, sám do ní padá."
       />
       <div className="question__options">

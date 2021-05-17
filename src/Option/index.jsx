@@ -4,11 +4,12 @@ import './style.css';
 
 const Option = ({ type, text, onSelected }) => {
   const handleClick = () => {
-    onSelected();
+    console.log(text);
+    onSelected(type);
   };
   return (
-    <div className="option">
-      <Icon onClick={handleClick} type={type} />
+    <div onClick={handleClick} className="option">
+      <Icon type={type} />
       <div>{text}</div>
     </div>
   );
