@@ -2,11 +2,16 @@ import React from 'react';
 import Icon from '../Icon/index';
 import './style.css';
 
-const Option = (props) => (
-  <div className="option">
-    <Icon type={props.type} />
-    <div>{props.text}</div>
-  </div>
-);
+const Option = ({ type, text, onSelected }) => {
+  const handleClick = () => {
+    onSelected();
+  };
+  return (
+    <div className="option">
+      <Icon onClick={handleClick} type={type} />
+      <div>{text}</div>
+    </div>
+  );
+};
 
 export default Option;
